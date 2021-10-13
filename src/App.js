@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import BloomPage from './features/bloom/bloom.page';
+import theme from './infrastructure/index';
+import OfflineProvider from './services/offline/offline.context';
+import TracksProvider from './services/tracks/tracks.context';
+import LayoutContainer from './shared/containers/layout.container';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={BloomPage} />
+          <TracksProvider>
+            <OfflineProvider>
+              <Route path="/browse" component={LayoutContainer} />
+            </OfflineProvider>
+          </TracksProvider>
+        </Switch>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
