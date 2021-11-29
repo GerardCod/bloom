@@ -32,7 +32,7 @@ export default function HomePage({ playSong }) {
         !state.searching && state.data?.categories?.map((category, idx) => {
           return (
             <div key={`section-id: ${idx}`}>
-              <SectionTitle>{ category.name }</SectionTitle>
+              <SectionTitle>{category.name}</SectionTitle>
               <SongsContainer wrap="wrap" content="flex-start">
                 {
                   category.songs.map((song) => <SongCard key={`song-id: ${song.id}`} song={song} playSong={playSong} />)
@@ -48,7 +48,7 @@ export default function HomePage({ playSong }) {
         <div>
           <ResetButton onClick={resetResults} />
           <SectionTitle>Resultados</SectionTitle>
-          <SongsContainer wrap="wrap" content="flex-start"> 
+          <SongsContainer wrap="wrap" content="flex-start">
             {
               state.tracksFound?.map(song => <SongCard key={`song-id: ${song.id}`} song={song} playSong={playSong} />)
             }
@@ -58,12 +58,15 @@ export default function HomePage({ playSong }) {
 
       {
         (state.searching && state.tracksFound?.length === 0) &&
-        <NotFoundContainer content="center" items="center">
-          <h3>No se encontraron resultados</h3>
-        </NotFoundContainer>
+        <div>
+          <ResetButton onClick={resetResults} />
+          <NotFoundContainer content="center" items="center">
+            <h3>No se encontraron resultados</h3>
+          </NotFoundContainer>
+        </div>
       }
     </>
-  );  
+  );
 }
 
 HomePage.propTypes = {
