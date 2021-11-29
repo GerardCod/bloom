@@ -9,7 +9,11 @@ export default function OfflineProvider({ children }) {
     setOnline(state);
   }, []);
 
-  const childProps = { online, updateNetworkState }
+  const isOnline = useCallback(function getState() {
+    return online;
+  }, [online]);
+
+  const childProps = { online, updateNetworkState, isOnline }
 
   return (
     <OfflineContext.Provider value={childProps}>

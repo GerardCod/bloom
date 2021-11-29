@@ -6,6 +6,7 @@ export const SEARCH_TRACKS = 'SEARCH_TRACKS';
 export const SEARCH_BY_TASK = 'SEARCH_BY_TASK';
 export const RESET = 'RESET';
 export const FETCH_ACTIVITIES = 'FETCH_ACTIVITIES';
+export const SEARCH_BY_WEATHER = 'SEARCH_BY_WEATHER';
 
 export const initialState = {
   data: {},
@@ -15,6 +16,7 @@ export const initialState = {
   activities: [],
   searching: false,
   searchingByTask: false,
+  searchingByWeather: false,
 }
 
 
@@ -42,6 +44,12 @@ export default function TracksReducer(state, action) {
       searching: false,
       tracksFound: [],
     },
+    SEARCH_BY_WEATHER: {
+      ...state,
+      searchingByWeather: true,
+      loading: false,
+      tracksFound: searchByWeather(action.payload, state.data)
+    },
     FETCH_ACTIVITIES: {...state, activities: action.payload, loading: false},
   };
   
@@ -62,6 +70,16 @@ function searchByTask(task, data) {
   try {
     const allTracks = getAllTracks(data);
     const filteredTracks = allTracks?.filter(song => song.task === task);
+    return filteredTracks;
+  } catch (error) {
+    return [];
+  }
+}
+
+function searchByWeather(weather, data) {
+  try {
+    const allTracks = getAllTracks(data);
+    const filteredTracks = allTracks?.filter(song => song.weathers.includes(weather.main));
     return filteredTracks;
   } catch (error) {
     return [];

@@ -21,7 +21,6 @@ export default function ActivitiesPage({ playSong }) {
     fetchActivities();
   }, [ fetchActivities ]);
 
-  console.log(state);
 
   return (
     <>

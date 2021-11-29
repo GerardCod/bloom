@@ -5,6 +5,7 @@ import BloomPage from './features/bloom/bloom.page';
 import theme from './infrastructure/index';
 import OfflineProvider from './services/offline/offline.context';
 import TracksProvider from './services/tracks/tracks.context';
+import WeatherProvider from './services/weather/weather.context';
 import LayoutContainer from './shared/containers/layout.container';
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
           <Route path="/" exact component={BloomPage} />
           <TracksProvider>
             <OfflineProvider>
-              <Route path="/browse" component={LayoutContainer} />
+              <WeatherProvider>
+                <Route path="/browse" component={LayoutContainer} />
+              </WeatherProvider>
             </OfflineProvider>
           </TracksProvider>
         </Switch>

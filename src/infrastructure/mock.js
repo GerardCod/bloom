@@ -16,6 +16,7 @@ export const songsData = {
             offline: '/assets/songs/Circa Waves - Fire That Burns.mp3',
           },
           task: 'Ponerme modo rockstar',
+          weathers: [],
         },
         {
           id: 1238584,
@@ -30,6 +31,7 @@ export const songsData = {
             offline: '/assets/songs/El David - Para toda la vida.mp3',
           },
           task: 'Chillar como magdalena',
+          weathers: [],
         },
         {
           id: 1238565,
@@ -44,6 +46,7 @@ export const songsData = {
             offline: '/assets/songs/El_David_-_El abrazo mas largo del mundo.mp3',
           },
           task: 'Chillar como magdalena',
+          weathers: [],
         },
         {
           id: 1238566,
@@ -58,6 +61,7 @@ export const songsData = {
             offline: '/assets/songs/Por mi mexico.mp3',
           },
           task: 'Modo fachero',
+          weathers: ['Clouds'],
         },
         {
           id: 1238567,
@@ -72,6 +76,7 @@ export const songsData = {
             offline: '/assets/songs/New Albion 1.mp3',
           },
           task: 'Estudiar o hacer tarea',
+          weathers: [],
         },
       ],
     }, {
@@ -90,6 +95,7 @@ export const songsData = {
             offline: '/assets/songs/Wolfmother - Joker_and_the_Thief.mp3',
           },
           task: 'Ponerme modo rockstar',
+          weathers: ['Clouds'],
         },
         {
           id: 9846541,
@@ -104,6 +110,7 @@ export const songsData = {
             offline: '/assets/songs/Rise_Against_-_Architects.mp3',
           },
           task: 'Ponerme modo rockstar',
+          weathers: [],
         },
         {
           id: 9846542,
@@ -118,6 +125,7 @@ export const songsData = {
             offline: '/assets/songs/Breaking Benjamin- Evil Angel.mp3',
           },
           task: 'Ponerme modo rockstar',
+          weathers: [],
         },
         {
           id: 9846544,
@@ -132,6 +140,7 @@ export const songsData = {
             offline: '/assets/songs/Poets_of_the_Fall_-_My_Dark_Disquiet.mp3',
           },
           task: 'Ponerme modo rockstar',
+          weathers: [],
         },
       ],
     },
@@ -151,6 +160,7 @@ export const songsData = {
             offline: '/assets/songs/Oliver_Tree_-_Life_Goes_On_Music_Video.mp3',
           },
           task: 'Modo fachero',
+          weathers: ['Clouds'],
         }
       ],
     },
@@ -170,6 +180,7 @@ export const songsData = {
             offline: '/assets/songs/Soothing Breeze - asian lofi hip hop.mp3',
           },
           task: 'Estudiar o hacer tarea',
+          weathers: [],
         },
         {
           id: 3217891,
@@ -184,6 +195,7 @@ export const songsData = {
             offline: '/assets/songs/Trick Or Treat _ halloween.mp3',
           },
           task: 'Estudiar o hacer tarea',
+          weathers: [],
         },
       ],
     }

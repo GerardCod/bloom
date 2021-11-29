@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useReducer } from 'react';
-import TracksReducer, { FETCH_ACTIVITIES, FETCH_TRACKS, initialState, LOADING, RESET, SEARCH_BY_TASK, SEARCH_TRACKS} from './tracks.reducer';
+import TracksReducer, { FETCH_ACTIVITIES, FETCH_TRACKS, initialState, LOADING, RESET, SEARCH_BY_TASK, SEARCH_BY_WEATHER, SEARCH_TRACKS} from './tracks.reducer';
 import { songsData, activities } from '../../infrastructure/mock';
 
 export const TracksContext = createContext();
@@ -25,6 +25,11 @@ export default function TracksProvider({ children }) {
     dispatch({ type: SEARCH_BY_TASK, payload: task });
   }, []);
 
+  const searchByWeather = useCallback(function selectTracks(weather) {
+    dispatch({ type: LOADING });
+    dispatch({ type: SEARCH_BY_WEATHER, payload: weather });
+  }, []);
+
   const resetResults = useCallback(function reset() {
     dispatch({ type: RESET });
   }, []);
@@ -36,6 +41,7 @@ export default function TracksProvider({ children }) {
     searchTracksByTask,
     resetResults,
     fetchActivities,
+    searchByWeather,
   };
 
   return (
